@@ -9,4 +9,9 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   public title = 'Book List';
   public SubTitle = 'Sub Title';
+  public selectedBook ='';
+
+  public showSelectedBook(selectBook:string){
+    this.selectedBook=selectBook;
+  }
 }

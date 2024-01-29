@@ -7,8 +7,9 @@
 </div>
 
 <ng-container *ngIf="authorBooks.length>0" >
-    <ng-container *ngFor="let item of authorBooks">
-        <p (click)="showSummary(item)">{{item}}</p>
+    <ng-container *ngFor="let item of authorBooks , let idx =index">
+        <!-- (click)="showSummary(item)" -->
+        <p (click)="selectBook(idx)">{{item}}</p>
     </ng-container>
 </ng-container>
 

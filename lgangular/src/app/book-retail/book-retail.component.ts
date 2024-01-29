@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BookHelperService } from '../book-helper.service';
 import { BookSummaryService } from '../book-summary.service';
@@ -23,6 +23,7 @@ export class BookRetailComponent implements OnInit  {
 
   @Input("title") title1!: string;
   @Input("sub") SubTitle1!: string;
+  @Output("selectedBook") selectedBook = new EventEmitter<string>() ;
 
   constructor(private readonly bookHelperService: BookHelperService, private readonly booksummary:BookSummaryService) {}
 
@@ -46,6 +47,11 @@ export class BookRetailComponent implements OnInit  {
   public showSummary(name:string):void{
     this.summary= this.booksummary.getSummary(name)
     
+  }
+  
+  public selectBook(index:number):void{
+    const book = this.authorBooks[index]
+    this.selectedBook.emit(book)
   }
 
 }

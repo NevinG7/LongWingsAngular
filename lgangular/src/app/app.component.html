@@ -1,2 +1,3 @@
 
-<app-book-retail [title]="title" [sub]="SubTitle"></app-book-retail>
+<app-book-retail [title]="title" [sub]="SubTitle" (selectedBook)="showSelectedBook($event)"></app-book-retail>
+<app-book-product [selectedBook]="selectedBook"></app-book-product>
