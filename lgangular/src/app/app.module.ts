@@ -5,13 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BookRetailComponent } from './book-retail/book-retail.component';
 import { BookProductComponent } from './book-product/book-product.component';
 import { BookSummaryService } from './book-summary.service';
+import { BackgroundBlue } from './book-product/background-blue';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookProductComponent
+    BookProductComponent,
+    BackgroundBlue
   ],
   imports: [
     BrowserModule,
@@ -20,6 +22,9 @@ import { BookSummaryService } from './book-summary.service';
   ],
   providers:[
     BookSummaryService
+  ],
+  exports:[
+    BackgroundBlue
   ],
 
   bootstrap:[
