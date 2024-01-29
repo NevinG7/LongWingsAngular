@@ -1,0 +1,18 @@
+<h1>{{title1}}</h1>
+<h2>{{SubTitle1}}</h2>
+<div class="maindiv">
+    <ng-container *ngFor="let bookRetail of book; let idx=index ">
+        <div class="index_bar" (click)="showbooks(idx)">{{bookRetail.author}} </div>
+    </ng-container>
+</div>
+
+<ng-container *ngIf="authorBooks.length>0" >
+    <ng-container *ngFor="let item of authorBooks">
+        <p (click)="showSummary(item)">{{item}}</p>
+    </ng-container>
+</ng-container>
+
+<ng-container *ngIf="summary!=''">
+ <p>{{summary}}</p>
+</ng-container>
+
